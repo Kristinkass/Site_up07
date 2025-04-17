@@ -1,0 +1,25 @@
+<div class="section" id="general-info">
+    <h2 class="section-title"><span class="icon-title">📋</span> Общая информация</h2>
+    {% for loc in locations %}
+    <div class="highlight-box">
+        <p>{{ loc['description'] }}</p>
+    </div>
+    <table>
+        <tr><th>Характеристика</th><th>Значение</th></tr>
+        <tr><td>Официальное название</td><td>{{ loc['official_name'] }}</td></tr>
+        <tr><td>Столица</td><td>{{ loc['capital'] }}</td></tr>
+        <tr><td>Площадь</td><td>{{ loc['area_km2'] }} км²</td></tr>
+        <tr><td>Население</td><td>{{ loc['population'] }} человек</td></tr>
+        <tr><td>Государственный язык</td><td>{{ loc['official_language'] }}</td></tr>
+        <tr><td>Основная религия</td><td>{{ loc['religion'] }}</td></tr>
+        {% if loc['president'] %}
+        <tr><td>Глава государства</td><td class="president-info">
+        {% if loc['photo'] %}
+            <img src="{{ loc['photo'] }}" class="person-photo" style="width: 80px; height: 80px; display: inline-block; vertical-align: middle; margin-right: 15px;">
+        {% endif %}
+        <span style="display: inline-block; vertical-align: middle;">{{ loc['president'] }}</span>
+    </td></tr>
+    {% endif %}
+    </table>
+    {% endfor %}
+</div>

@@ -1,0 +1,21 @@
+<div class="section" id="science">
+    <h2 class="section-title"><span class="icon-title">🔬</span> Ученые и изобретатели</h2>
+    {% if scientists %}
+        {% for sci in scientists %}
+            <div class="person-card">
+                {% if sci.photo %}
+                    <img src="{{ sci.photo }}" alt="{{ sci.full_name }}" class="person-photo">
+                {% endif %}
+                <div class="person-info">
+                    <h3 class="person-name">{{ sci.full_name }}</h3>
+                    {% if sci.lifespan %}
+                        <p class="person-lifespan">{{ sci.lifespan }}</p>
+                    {% endif %}
+                    <p>{{ sci.information }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных об ученых и изобретателях.</p>
+    {% endif %}
+</div>

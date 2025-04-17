@@ -1,0 +1,36 @@
+<div class="section" id="history">
+    <h2 class="section-title"><span class="icon-title">📜</span> История</h2>
+    <div class="info-grid">
+        <div>
+            <h3>Основные даты и события</h3>
+            <ul class="fact-list">
+                {% for event in history %}
+                    <li class="fact-item">
+                        <strong>{{ event.event }}:</strong> {{ event.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h3>Исторические личности</h3>
+            {% if historicalFigures %}
+                {% for figure in historicalFigures %}
+                    <div class="person-card">
+                        {% if figure.photo %}
+                            <img src="{{ figure.photo }}" alt="{{ figure.full_name }}" class="person-photo">
+                        {% endif %}
+                        <div class="person-info">
+                            <h3 class="person-name">{{ figure.full_name }}</h3>
+                            {% if figure.lifespan %}
+                                <p class="person-lifespan">{{ figure.lifespan }}</p>
+                            {% endif %}
+                            <p>{{ figure.information }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Нет данных о исторических личностях.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

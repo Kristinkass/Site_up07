@@ -1,0 +1,25 @@
+<div class="section" id="cities">
+    <h2 class="section-title"><span class="icon-title">🏙️</span> Крупные города</h2>
+    <div class="card-grid">
+        {% if cities %}
+            {% for city in cities %}
+                <div class="card">
+                    {% if city.photo %}
+                        <img src="{{ city.photo }}" alt="{{ city.name }}" class="card-image">
+                    {% endif %}
+                    <div class="card-content">
+                        <h3 class="card-title">{{ city.name }}</h3>
+                    {% if city.description %}
+                        <p class="card-text">{{ city.description }}</p>
+                    {% endif %}
+                    {% if city.population %}
+                        <p class="card-text">Население: {{ city.population }}</p>
+                    {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет данных о городах.</p>
+        {% endif %}
+    </div>
+</div>

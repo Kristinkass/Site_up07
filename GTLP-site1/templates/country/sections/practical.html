@@ -1,0 +1,91 @@
+<div class="section" id="practical">
+    <h2 class="section-title"><span class="icon-title">ℹ️</span> Практическая информация</h2>
+    <div class="info-grid">
+        <div>
+            <h3>Особенности поведения</h3>
+            {% if travelersinfo and travelersinfo[0].behavior %}
+                <div class="highlight-box">
+                    {% for paragraph in travelersinfo[0].behavior.split('\n') %}
+                        {% if paragraph.strip() %}
+                            <p>{{ paragraph }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+            
+            <h3>Особенности общения</h3>
+            {% if travelersinfo and travelersinfo[0].communication %}
+                <div class="highlight-box">
+                    {% for paragraph in travelersinfo[0].communication.split('\n') %}
+                        {% if paragraph.strip() %}
+                            <p>{{ paragraph }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+            
+            <h3>Дресс-код</h3>
+            {% if travelersinfo and travelersinfo[0].dress_code %}
+                <div class="highlight-box">
+                    {% for paragraph in travelersinfo[0].dress_code.split('\n') %}
+                        {% if paragraph.strip() %}
+                            <p>{{ paragraph }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+        </div>
+        <div>
+            <h3>Табу и запреты</h3>
+            {% if travelersinfo and travelersinfo[0].taboos %}
+                <div class="highlight-box">
+                    {% for paragraph in travelersinfo[0].taboos.split('\n') %}
+                        {% if paragraph.strip() %}
+                            <p>{{ paragraph }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+            
+            <h3>Советы по этикету</h3>
+            {% if travelersinfo and travelersinfo[0].etiquette %}
+                <div class="highlight-box">
+                    {% for paragraph in travelersinfo[0].etiquette.split('\n') %}
+                        {% if paragraph.strip() %}
+                            <p>{{ paragraph }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+            
+            <h3>Полезные фразы</h3>
+            {% if travelersinfo and travelersinfo[0].phrases %}
+                <div class="highlight-box">
+                    {% for phrase in travelersinfo[0].phrases.split('\n') %}
+                        {% if phrase.strip() %}
+                            <p>{{ phrase }}</p>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Нет данных</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

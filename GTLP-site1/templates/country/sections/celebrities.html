@@ -1,0 +1,21 @@
+<div class="section" id="celebrities">
+    <h2 class="section-title"><span class="icon-title">🌟</span> Современные знаменитости</h2>
+    {% if celebrities %}
+        {% for celeb in celebrities %}
+            <div class="person-card">
+                {% if celeb.photo %}
+                    <img src="{{ celeb.photo }}" alt="{{ celeb.full_name }}" class="person-photo">
+                {% endif %}
+                <div class="person-info">
+                    <h3 class="person-name">{{ celeb.full_name }}</h3>
+                    {% if celeb.lifespan %}
+                        <p class="person-lifespan">{{ celeb.lifespan }}</p>
+                    {% endif %}
+                    <p>{{ celeb.information }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных о современных знаменитостях.</p>
+    {% endif %}
+</div>

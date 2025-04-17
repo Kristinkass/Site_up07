@@ -1,0 +1,47 @@
+<div class="section" id="music">
+    <h2 class="section-title"><span class="icon-title">🎭</span> Искусство и музыка</h2>
+    <div class="info-container">
+        <h3>Ремесла</h3>
+        <div class="crafts-grid">
+            {% if crafts %}
+                {% for craft in crafts %}
+                    <div class="craft-item">
+                        {% if craft.photo %}
+                            <img src="{{ craft.photo }}" alt="{{ craft.name }}" class="craft-image">
+                        {% endif %}
+                        <div class="craft-content">
+                            <h3 class="craft-title">{{ craft.name }}</h3>
+                            <p class="craft-text">{{ craft.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Нет данных о ремеслах.</p>
+            {% endif %}
+        </div>
+
+        <h3 style="margin-top: 30px;">Музыкальные инструменты</h3>
+        <div class="instruments-grid">
+            {% if musicalinstruments %}
+                {% for instrument in musicalinstruments %}
+                    <div class="instrument-item">
+                        {% if instrument.photo %}
+                            <img src="{{ instrument.photo }}" alt="{{ instrument.name }}" class="instrument-image">
+                        {% endif %}
+                        <div class="instrument-content">
+                            <h3 class="instrument-title">{{ instrument.name }}</h3>
+                            {% if instrument.information %}
+                                <p class="instrument-text">{{ instrument.information }}</p>
+                            {% endif %}
+                            {% if instrument.description %}
+                                <p class="instrument-text">{{ instrument.description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Нет данных о музыкальных инструментах.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

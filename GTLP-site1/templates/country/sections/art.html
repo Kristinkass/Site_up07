@@ -1,0 +1,21 @@
+<div class="section" id="art">
+    <h2 class="section-title"><span class="icon-title">🎨</span> Деятели искусства</h2>
+    {% if artists %}
+        {% for art in artists %}
+            <div class="person-card">
+                {% if art.photo %}
+                    <img src="{{ art.photo }}" alt="{{ art.full_name }}" class="person-photo">
+                {% endif %}
+                <div class="person-info">
+                    <h3 class="person-name">{{ art.full_name }}</h3>
+                    {% if art.lifespan %}
+                        <p class="person-lifespan">{{ art.lifespan }}</p>
+                    {% endif %}
+                    <p>{{ art.information }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных о деятелях искусства.</p>
+    {% endif %}
+</div>

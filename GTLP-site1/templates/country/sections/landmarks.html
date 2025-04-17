@@ -1,0 +1,20 @@
+<div class="section" id="landmarks">
+    <h2 class="section-title"><span class="icon-title">🏞️</span> Достопримечательности</h2>
+    <div class="card-grid">
+        {% if landmarks %}
+            {% for landmark in landmarks %}
+                <div class="card">
+                    {% if landmark.photo %}
+                        <img src="{{ landmark.photo }}" alt="{{ landmark.name }}" class="card-image">
+                    {% endif %}
+                    <div class="card-content">
+                        <h3 class="card-title">{{ landmark.name }}</h3>
+                        <p class="card-text">{{ landmark.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет данных о достопримечательностях.</p>
+        {% endif %}
+    </div>
+</div>

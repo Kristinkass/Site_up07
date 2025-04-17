@@ -1,0 +1,8 @@
+<div class="section" id="facts">
+    <h2 class="section-title"><span class="icon-title">🤔</span> Интересные факты</h2>
+    <ul class="fact-list">
+        {% for fact in facts %}
+            <li class="fact-item">{{ fact.information }}</li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ country['name'] }} - Путеводитель{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/country.css') }}">
+{% endblock %}
+
+{% block content %}
+    <nav class="nav-menu">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#general-info" class="nav-link active">📋 Общая информация</a></li>
+                <li class="nav-item"><a href="#cities" class="nav-link">🏙️ Города</a></li>
+                <li class="nav-item"><a href="#symbols" class="nav-link">🏛️ Символы</a></li>
+                <li class="nav-item"><a href="#history" class="nav-link">📜 История</a></li>
+                <li class="nav-item"><a href="#art" class="nav-link">🎨 Искусство</a></li>
+                <li class="nav-item"><a href="#science" class="nav-link">🔬 Наука</a></li>
+                <li class="nav-item"><a href="#celebrities" class="nav-link">🌟 Знаменитости</a></li>
+                <li class="nav-item"><a href="#music" class="nav-link">🎭 Музыка</a></li>
+                <li class="nav-item"><a href="#dances" class="nav-link">💃 Танцы</a></li>
+                <li class="nav-item"><a href="#literature" class="nav-link">📚 Литература</a></li>
+                <li class="nav-item"><a href="#cuisine" class="nav-link">🍲 Кухня</a></li>
+                <li class="nav-item"><a href="#landmarks" class="nav-link">🏞️ Достопримечательности</a></li>
+                <li class="nav-item"><a href="#practical" class="nav-link">ℹ️ Практическая информация</a></li>
+                <li class="nav-item"><a href="#facts" class="nav-link">🤔 Факты</a></li>
+                <li class="nav-item"><a href="#test" class="nav-link">📝 Тест</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="hero-section" {% if background_photo %} style="background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.884) 0%, rgba(255, 255, 255, 0.596) 100%), url('{{ background_photo }}');" {% endif %}>
+            <div class="hero-content">
+                <h1 class="hero-title">{{ country['name'] }}</h1>
+                <p class="hero-subtitle">Откройте для себя удивительную культуру, историю и достопримечательности этой прекрасной страны</p>
+            </div>
+        </div>
+
+        {% include "country/sections/general.html" %}
+        {% include "country/sections/cities.html" %}
+        {% include "country/sections/symbols.html" %}
+        {% include "country/sections/history.html" %}
+        {% include "country/sections/art.html" %}
+        {% include "country/sections/science.html" %}
+        {% include "country/sections/celebrities.html" %}
+        {% include "country/sections/music.html" %}
+        {% include "country/sections/dances.html" %}
+        {% include "country/sections/literature.html" %}
+        {% include "country/sections/cuisine.html" %}
+        {% include "country/sections/landmarks.html" %}
+        {% include "country/sections/practical.html" %}
+        {% include "country/sections/facts.html" %}
+        {% include "country/sections/test.html" %}
+
+        <a href="/" class="back-button">Вернуться на карту</a>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/country.js') }}"></script>
+{% endblock %}

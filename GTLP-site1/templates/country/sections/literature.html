@@ -1,0 +1,18 @@
+<div class="section" id="literature">
+    <h2 class="section-title"><span class="icon-title">📚</span> Литература</h2>
+    {% if literature %}
+        {% for item in literature %}
+            <div class="person-card">
+                {% if item.photo %}
+                    <img src="{{ item.photo }}" alt="{{ item.name }}" class="person-photo">
+                {% endif %}
+                <div class="person-info">
+                    <h3 class="person-name">{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных о литературе.</p>
+    {% endif %}
+</div>

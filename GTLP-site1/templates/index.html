@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Изучение культуры стран - Главная{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Сайт для изучения культуры стран</h1>
+    <p>Нажмите на маркер страны, чтобы узнать больше о её культуре</p>
+</header>
+<div id="map"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}

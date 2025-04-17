@@ -1,0 +1,18 @@
+<div class="section" id="dances">
+    <h2 class="section-title"><span class="icon-title">💃</span> Танцы</h2>
+    {% if dances %}
+        {% for dance in dances %}
+            <div class="person-card">
+                {% if dance.photo %}
+                    <img src="{{ dance.photo }}" alt="{{ dance.name }}" class="person-photo">
+                {% endif %}
+                <div class="person-info">
+                    <h3 class="person-name">{{ dance.name }}</h3>
+                    <p>{{ dance.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных о танцах.</p>
+    {% endif %}
+</div>

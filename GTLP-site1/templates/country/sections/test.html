@@ -1,0 +1,11 @@
+<div class="section" id="test" style="text-align: center;">
+    <h2 class="section-title"><span class="icon-title">📝</span> Тест по стране</h2>
+    <p>Проверьте свои знания о {{ country['name'] }}!</p>
+    <p>После изучения всех материалов попробуйте пройти наш тест и узнайте, насколько хорошо вы запомнили информацию.</p>
+    
+    {% if tests and tests.test_link %}
+        <a href="{{ tests.test_link }}" class="test-button" target="_blank">Пройти тест</a>
+    {% else %}
+        <p style="color: var(--text-light);">Тест временно недоступен</p>
+    {% endif %}
+</div>

@@ -1,0 +1,36 @@
+<div class="section" id="cuisine">
+    <h2 class="section-title"><span class="icon-title">🍲</span> Национальная кухня</h2>
+
+    {% if cuisine %}
+        {% if cuisine[0].cuisine_description %}
+            <div class="highlight-box">
+                <p>{{ cuisine[0].cuisine_description }}</p>
+            </div>
+        {% endif %}
+
+        {% if cuisine[0].ingredients %}
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);">
+                <h3>Типичные ингредиенты:</h3>
+                <p>{{ cuisine[0].ingredients }}</p>
+            </div>
+        {% endif %}
+
+        <div class="card-grid">
+            {% for dish in cuisine %}
+                <div class="card">
+                    {% if dish.dish_photo %}
+                        <img src="{{ dish.dish_photo }}" alt="{{ dish.dish_name }}" class="card-image">
+                    {% endif %}
+                    <div class="card-content">
+                        <h3 class="card-title">{{ dish.dish_name }}</h3>
+                        {% if dish.dish_description %}
+                            <p class="card-text">{{ dish.dish_description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Информация о национальной кухне отсутствует.</p>
+    {% endif %}
+</div>

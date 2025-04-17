@@ -1,0 +1,16 @@
+<div class="section" id="symbols">
+    <h2 class="section-title"><span class="icon-title">🏛️</span> Государственные символы</h2>
+    <div class="symbol-container">
+        <div class="symbol-card">
+            <img src="{{ flags.photo }}" alt="Флаг {{ country['name'] }}" class="symbol-image">
+            <h3 class="symbol-title">Флаг</h3>
+            <p>{{ flags['information'] if flags['information'] else 'Информация о флаге отсутствует' }}</p>
+        </div>
+
+        <div class="symbol-card">
+            <img src="{{ coatsofarms.photo }}" alt="Герб {{ country['name'] }}" class="symbol-image">
+            <h3 class="symbol-title">Герб</h3>
+            <p>{{ coatsofarms.description if coatsofarms.description else 'Информация о гербе отсутствует' }}</p>
+        </div>
+    </div>
+</div>
